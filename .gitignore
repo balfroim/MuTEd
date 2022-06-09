@@ -1,0 +1,10 @@
+
+Notebook/.idea/
+
+Notebook/.ipynb_checkpoints/
+
+Notebook/__pycache__/
+
+*.csv#
+
+Notebook/data/pseudos.zip

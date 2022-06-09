@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rapport</title>
+  <style>
+    body {
+      margin: auto;
+      max-width: 600px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 13pt;
+    }
+
+    code {
+      padding: 0 4px;
+      color: white;
+      background-color: #424242;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    .control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card {
+      margin: 8pt 0;
+      padding: 8pt;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .diagnosis::before, .suggestion::before {
+      margin: 0 6pt;
+      float : left;
+      font-size: 2.2rem;
+    }
+
+    .diagnosis::before {
+      content: "🩺";
+    }
+
+    .suggestion::before {
+      content: "💡";
+    }
+  </style>
+  <script type="module">
+    const previousEl = document.querySelector('#previous')
+    const indexEl = document.querySelector('#index')
+    const nextEl = document.querySelector('#next')
+    const cardEls = Array.from(document.querySelectorAll('.card:not(:first-child)'))
+
+    let index = 0
+    update()
+
+    document.querySelector('#next').addEventListener('click', () => {
+      index++
+      update()
+    })
+
+    document.querySelector('#previous').addEventListener('click', () => {
+      index--
+      update()
+    })
+
+    function update() {
+      indexEl.textContent = `${index + 1}/${cardEls.length}`
+
+      if (index <= 0) {
+        previousEl.setAttribute('disabled', true)
+      } else {
+        previousEl.removeAttribute('disabled')
+      }
+
+      if (index >= cardEls.length - 1) {
+        nextEl.setAttribute('disabled', true)
+      } else {
+        nextEl.removeAttribute('disabled')
+      }
+
+      for (let i = 0; i < cardEls.length; i++) {
+        const card = cardEls[i]
+        if (i === index) {
+          card.classList.remove('hidden')
+        } else {
+          card.classList.add('hidden')
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="control card">
+    <button id="previous">🠔</button>
+    <span id="index"></span>
+    <button id="next">🠖</button>
+  </div>
+  <div class="card">
+  <h2><code>GridHelper.colEqual(be.unamur.game2048.models.Grid, int, java.lang.Integer[])</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GridHelper.colEqual(be.unamur.game2048.models.Grid, int, java.lang.Integer[])</code>
+    a été
+    remplacé par
+    <code>return true;</code>.
+    Pourtant,
+    le test <code>Test2048.testGridGetCol</code> n'a pas échoué.
+  </p>
+  <p class="execution diagnosis">
+    Exécuter les tests avec la méthode modifiée ou avec la méthode originale ne
+    provoque aucune différence observable dans l'état du programme.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être de créer une variante
+    du test en question
+    dans laquelle la méthode renverrait une valeur différente.
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GridHelper.rowEqual(be.unamur.game2048.models.Grid, int, java.lang.Integer[])</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GridHelper.rowEqual(be.unamur.game2048.models.Grid, int, java.lang.Integer[])</code>
+    a été
+    remplacé par
+    <code>return true;</code>.
+    Pourtant,
+    aucun des tests suivants n'a échoué&nbsp;:
+    <ul>
+      <li><code>Test2048.testGridGetRow</code></li>
+      <li><code>Test2048.testGridWithTiles</code></li>
+    </ul>
+  </p>
+  <p class="execution diagnosis">
+    Exécuter les tests avec la méthode modifiée ou avec la méthode originale ne
+    provoque aucune différence observable dans l'état du programme.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être de créer une variante
+    des tests listés ci-dessus
+    dans laquelle la méthode renverrait une valeur différente.
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GridHelper.lineEqual(java.lang.Integer[], be.unamur.game2048.models.Tile[])</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GridHelper.lineEqual(java.lang.Integer[], be.unamur.game2048.models.Tile[])</code>
+    a été
+    remplacé par
+    <code>return true;</code>.
+    Pourtant,
+    aucun des tests suivants n'a échoué&nbsp;:
+    <ul>
+      <li><code>Test2048.testGridGetRow</code></li>
+      <li><code>Test2048.testGridWithTiles</code></li>
+      <li><code>Test2048.testGridGetCol</code></li>
+    </ul>
+  </p>
+  <p class="execution diagnosis">
+    Exécuter les tests avec la méthode modifiée ou avec la méthode originale ne
+    provoque aucune différence observable dans l'état du programme.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être de créer une variante
+    des tests listés ci-dessus
+    dans laquelle la méthode renverrait une valeur différente.
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.fillFirstEmptyTile()</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GameController.fillFirstEmptyTile()</code>
+    a été
+    remplacé par
+    <code>return true;</code>.
+    Pourtant,
+    le test <code>Test2048.testGameControllerStartGameDefault</code> n'a pas échoué.
+  </p>
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>Test2048.java</code>
+    à la ligne 310
+    dans une expression de type <code>be.unamur.game2048.controllers.GameController</code>.
+    En effet, la valeur
+    de la variable d'instance <code>tileAdded</code>
+    était <code>2</code> avec la méthode orignale, alors qu'elle
+    vaut <code>0</code> avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>tileAdded</code>.
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      <li><code>GameController.fillFirstEmptyTile()</code></li>
+    </ul>
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.fillFirstEmptyTile()</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GameController.fillFirstEmptyTile()</code>
+    a été
+    remplacé par
+    <code>return true;</code>.
+    Pourtant,
+    le test <code>Test2048.testGameControllerStartGameDefault</code> n'a pas échoué.
+  </p>
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>Test2048.java</code>
+    à la ligne 309
+    dans une expression de type <code>be.unamur.game2048.controllers.GameController</code>.
+    En effet, la valeur
+    de la variable d'instance <code>tileAdded</code>
+    était <code>2</code> avec la méthode orignale, alors qu'elle
+    vaut <code>0</code> avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>tileAdded</code>.
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      <li><code>GameController.fillFirstEmptyTile()</code></li>
+    </ul>
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.fillFirstEmptyTile()</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GameController.fillFirstEmptyTile()</code>
+    a été
+    remplacé par
+    <code>return true;</code>.
+    Pourtant,
+    le test <code>Test2048.testGameControllerStartGameDefault</code> n'a pas échoué.
+  </p>
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>Test2048.java</code>
+    à la ligne 304
+    dans une expression de type <code>be.unamur.game2048.controllers.GameController</code>.
+    En effet, la valeur
+    de la variable d'instance <code>tileAdded</code>
+    était <code>2</code> avec la méthode orignale, alors qu'elle
+    vaut <code>0</code> avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>tileAdded</code>.
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      <li><code>GameController.fillFirstEmptyTile()</code></li>
+    </ul>
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.fillFirstEmptyTile()</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GameController.fillFirstEmptyTile()</code>
+    a été
+    remplacé par
+    <code>return true;</code>.
+    Pourtant,
+    le test <code>Test2048.testGameControllerStartGameDefault</code> n'a pas échoué.
+  </p>
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>Test2048.java</code>
+    à la ligne 308
+    dans une expression de type <code>be.unamur.game2048.controllers.GameController</code>.
+    En effet, la valeur
+    de la variable d'instance <code>tileAdded</code>
+    était <code>2</code> avec la méthode orignale, alors qu'elle
+    vaut <code>0</code> avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>tileAdded</code>.
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      <li><code>GameController.fillFirstEmptyTile()</code></li>
+    </ul>
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.fillFirstEmptyTile()</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GameController.fillFirstEmptyTile()</code>
+    a été
+    remplacé par
+    <code>return false;</code>.
+    Pourtant,
+    le test <code>Test2048.testGameControllerStartGameDefault</code> n'a pas échoué.
+  </p>
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>Test2048.java</code>
+    à la ligne 310
+    dans une expression de type <code>be.unamur.game2048.controllers.GameController</code>.
+    En effet, la valeur
+    de la variable d'instance <code>tileAdded</code>
+    était <code>2</code> avec la méthode orignale, alors qu'elle
+    vaut <code>0</code> avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>tileAdded</code>.
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      <li><code>GameController.fillFirstEmptyTile()</code></li>
+    </ul>
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.fillFirstEmptyTile()</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GameController.fillFirstEmptyTile()</code>
+    a été
+    remplacé par
+    <code>return false;</code>.
+    Pourtant,
+    le test <code>Test2048.testGameControllerStartGameDefault</code> n'a pas échoué.
+  </p>
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>Test2048.java</code>
+    à la ligne 309
+    dans une expression de type <code>be.unamur.game2048.controllers.GameController</code>.
+    En effet, la valeur
+    de la variable d'instance <code>tileAdded</code>
+    était <code>2</code> avec la méthode orignale, alors qu'elle
+    vaut <code>0</code> avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>tileAdded</code>.
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      <li><code>GameController.fillFirstEmptyTile()</code></li>
+    </ul>
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.fillFirstEmptyTile()</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GameController.fillFirstEmptyTile()</code>
+    a été
+    remplacé par
+    <code>return false;</code>.
+    Pourtant,
+    le test <code>Test2048.testGameControllerStartGameDefault</code> n'a pas échoué.
+  </p>
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>Test2048.java</code>
+    à la ligne 304
+    dans une expression de type <code>be.unamur.game2048.controllers.GameController</code>.
+    En effet, la valeur
+    de la variable d'instance <code>tileAdded</code>
+    était <code>2</code> avec la méthode orignale, alors qu'elle
+    vaut <code>0</code> avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>tileAdded</code>.
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      <li><code>GameController.fillFirstEmptyTile()</code></li>
+    </ul>
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.fillFirstEmptyTile()</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>GameController.fillFirstEmptyTile()</code>
+    a été
+    remplacé par
+    <code>return false;</code>.
+    Pourtant,
+    le test <code>Test2048.testGameControllerStartGameDefault</code> n'a pas échoué.
+  </p>
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>Test2048.java</code>
+    à la ligne 308
+    dans une expression de type <code>be.unamur.game2048.controllers.GameController</code>.
+    En effet, la valeur
+    de la variable d'instance <code>tileAdded</code>
+    était <code>2</code> avec la méthode orignale, alors qu'elle
+    vaut <code>0</code> avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>tileAdded</code>.
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      <li><code>GameController.fillFirstEmptyTile()</code></li>
+    </ul>
+  </p>
+  </div>
+  <div class="card">
+  <h2><code>GameController.updateScore(int)</code></h2>
+  <p class="uncovered issue">
+    La méthode <code>GameController.updateScore(int)</code> n'est exécutée par
+    aucun test.
+  </p>
+  <p class="suggestion">
+    Vous pourriez écrire un nouveau test qui cible cette méthode.
+  </p>  </div>
+  <div class="card">
+  <h2><code>GameController.startGame(be.unamur.game2048.models.Tile[][])</code></h2>
+  <p class="uncovered issue">
+    La méthode <code>GameController.startGame(be.unamur.game2048.models.Tile[][])</code> n'est exécutée par
+    aucun test.
+  </p>
+  <p class="suggestion">
+    Vous pourriez écrire un nouveau test qui cible cette méthode.
+  </p>  </div>
+  <div class="card">
+  <h2><code>GameController.moveRight(boolean)</code></h2>
+  <p class="uncovered issue">
+    La méthode <code>GameController.moveRight(boolean)</code> n'est exécutée par
+    aucun test.
+  </p>
+  <p class="suggestion">
+    Vous pourriez écrire un nouveau test qui cible cette méthode.
+  </p>  </div>
+  <div class="card">
+  <h2><code>GameController.moveLeft(boolean)</code></h2>
+  <p class="uncovered issue">
+    La méthode <code>GameController.moveLeft(boolean)</code> n'est exécutée par
+    aucun test.
+  </p>
+  <p class="suggestion">
+    Vous pourriez écrire un nouveau test qui cible cette méthode.
+  </p>  </div>
+  <div class="card">
+  <h2><code>GameController.moveDown(boolean)</code></h2>
+  <p class="uncovered issue">
+    La méthode <code>GameController.moveDown(boolean)</code> n'est exécutée par
+    aucun test.
+  </p>
+  <p class="suggestion">
+    Vous pourriez écrire un nouveau test qui cible cette méthode.
+  </p>  </div>
+  <div class="card">
+  <h2><code>GameController.moveUp(boolean)</code></h2>
+  <p class="uncovered issue">
+    La méthode <code>GameController.moveUp(boolean)</code> n'est exécutée par
+    aucun test.
+  </p>
+  <p class="suggestion">
+    Vous pourriez écrire un nouveau test qui cible cette méthode.
+  </p>  </div>
+</body>
+
+</html>
