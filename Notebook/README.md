@@ -1,8 +1,6 @@
 # MuTEd: A Comparative Study of a Classic and an Extreme Mutation Testing Reporting Tools for Teaching Software Testing
 
-## What is it?
-
-MuTEd stands for *Mutation Testing Education*, and it's the code name for our master thesis. We conducted a comparative study of two reporting tools for teaching software testing to undergraduates. One, PIT, applies classical mutation testing and the other, Reneri, uses extreme mutation testing. This GitHub repository contains the data collected and the notebook used to generate the tables and graphs shown in the master thesis.
+# 
 
 ## How to run the project
 
@@ -17,7 +15,3 @@ The first time run [`poetry install`](https://python-poetry.org/docs/cli/#instal
 ### Every time
 
 Every time you want to start the notebook, you should run the command [`poetry shell`](https://python-poetry.org/docs/cli/#shell), which generates a new command prompt using a virtual python environment with all the project dependencies. Then run `jupyter notebook`, which should start a notebook on your default browser.
-
-
-
-
