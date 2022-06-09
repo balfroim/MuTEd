@@ -15,3 +15,7 @@ In this GitHub repository, you will find in the [Notebook directory](./Notebook)
 ## Who is behind this project?
 
 This study was conducted by two master's students, [Martin Balfroid](https://snail.info.unamur.be/author/martin-balfroid/) and [Pierre Luycx](https://snail.info.unamur.be/author/pierre-luycx/), from the University of Namur in Belgium. We were under the supervision of [Xavier Devroey](https://snail.info.unamur.be/author/xavier-devroey/) and [Benoît Vanderose](https://snail.info.unamur.be/author/benoit-vanderose/) during our internship inside the [SNAIL team](https://snail.info.unamur.be).
+
+## Licensing
+
+This repository contains adapted source codes of [Reneri](https://github.com/STAMP-project/descartes-reneri) (LGPL3, Oscar Luis Vera Pérez) and of an implementation of 2048 found on [Rosetta Code](https://www.rosettacode.org/wiki/2048#Java) (GFDL1.2, anonymous author).
