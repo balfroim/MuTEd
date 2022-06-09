@@ -1,5 +1,7 @@
 # MuTEd: A Comparative Study of a Classic and an Extreme Mutation Testing Reporting Tools for Teaching Software Testing
 
+[![DOI](https://zenodo.org/badge/499075011.svg)](https://zenodo.org/badge/latestdoi/499075011)
+
 ## What is MuTEd?
 
 MuTEd, which stands for *Mutation Testing Education*, is the code name for our master thesis. We conducted a comparative study of two reporting tools for teaching software testing to undergraduates. One, [PIT](https://github.com/hcoles/pitest), applies classical mutation testing and the other, [Reneri](https://github.com/STAMP-project/descartes-reneri), uses extreme mutation testing.
