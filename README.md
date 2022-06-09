@@ -10,7 +10,7 @@ MuTEd, which stands for *Mutation Testing Education*, is the code name for our m
 
 ## What you will find in this repository?
 
-In this GitHub repository, you will find the data collected during the experiment alongside the scripts to generate the tables and graphs shown in the master thesis document. You will also find the code for the SUT (an adapted version of the famous game 2048) that students tested.
+In this GitHub repository, you will find in the [Notebook directory](./Notebook) the data collected during the experiment alongside the scripts to generate the tables and graphs shown in the master thesis document. You will also find in the [SUT directory](./SUT) the code for the SUT (an adapted version of the famous game 2048) that students tested.
 
 ## Who is behind this project?
 
