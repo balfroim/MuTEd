@@ -1,6 +1,4 @@
-# MuTEd: A Comparative Study of a Classic and an Extreme Mutation Testing Reporting Tools for Teaching Software Testing
-
-# 
+# MuTEd: A Comparative Study of Classic and Extreme Mutation Testing for Teaching Software Testing
 
 ## How to run the project
 
